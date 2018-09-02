@@ -223,7 +223,7 @@ namespace azureFunctionPDF3
         {
             try
             {
-                SqlConnection sqlConnection1 = new SqlConnection("Server = tcp:anvi6sqlserver.database.windows.net,1433; Initial Catalog = ANVI6PliegosProductoSQL; Persist Security Info = False; User ID =; Password =; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlConnection sqlConnection1 = new SqlConnection("");
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("TEICPLliegos_Classify_EliminarVacios");
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Cadena", "[Empty]");
@@ -248,8 +248,8 @@ namespace azureFunctionPDF3
             {
                 var IdPdf = pliego.IdPdf.ToString();
                 var Classify = pliego.KeyGoogleClassify;
-                //SqlConnection sqlConnection1 = new SqlConnection("Server=tcp:techintpliegossqlserver.database.windows.net,1433;Initial Catalog=TECHINTPliegosSqlDB;;Persist Security Info=False;User ID=andres.visco;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-                SqlConnection sqlConnection1 = new SqlConnection("Server = tcp:anvi6sqlserver.database.windows.net,1433; Initial Catalog = ANVI6PliegosProductoSQL; Persist Security Info = False; User ID =andres.visco; Password =2363Andy; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                //SqlConnection sqlConnection1 = new SqlConnection("");
+                SqlConnection sqlConnection1 = new SqlConnection("");
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO dbo.PliegosClassifyText(IdPdf, Categorias) VALUES('" + IdPdf + "','" + Classify.ToString() + "')";
@@ -310,7 +310,7 @@ namespace azureFunctionPDF3
                 var Bloque = pliego.Bloque;
                 var Keys = pliego.KeyPhrases;
                 var KeysGoogle = pliego.KeyGoogle;
-                System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Server=tcp:anvi6sqlserver.database.windows.net,1433;Initial Catalog=ANVI6PliegosProductoSQL;Persist Security Info=False;User ID=andres.visco;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30");
+                System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("”);
 
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
